@@ -1,0 +1,23 @@
+{
+  "name": "actioncenter-styles",
+  "version": "1.0.0",
+  "description": "sass to css generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --output-style compressed --omit-source-map-url  styles.scss styles.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/King-County-Equity-Now/actioncenter-styles.git"
+  },
+  "author": "shankj3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/King-County-Equity-Now/actioncenter-styles/issues"
+  },
+  "homepage": "https://github.com/King-County-Equity-Now/actioncenter-styles#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
