@@ -28,7 +28,9 @@ body.sign_up-2445 {
   a, input, label, span, textarea {
     font-family: interface !important;
   }
-
+  label {
+    color: white;
+  }
   button, input, textarea {
     border-radius: 0 !important;
   }
@@ -40,6 +42,9 @@ body.sign_up-2445 {
     letter-spacing: 0.8px;
     padding: 15px 20px;
     width: unset;
+  }
+  div[data-cy="thank-you-text"] span {
+    color: white;
   }
 }
 
