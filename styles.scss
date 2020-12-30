@@ -12,10 +12,21 @@ iframe[src*=youtube] {
   padding-bottom: 10px;
 }
 
+@mixin hide-facebook-registration {
+  .registration-form > div.row {
+    display: none;
+  }
+}
+
+
 /* start KCEN site embeds */
 
+body.sign_up-2791 {
+  @include hide-facebook-registration;
+}
 
 /* both kcen website registration pages */
+div.widget.sc-jDwBTQ.ckfRgp,
 div.widget.sc-ckVGcZ.jfGWiW,
 body.sign_up-2415, 
 body.sign_up-2445 {
@@ -55,14 +66,6 @@ body.sign_up-2415 {
     text-transform: uppercase;
   }
 
-  label[for="Organization"]::after,
-  label[for="Message"]::after {
-    content: "(enter N/A if not relevant)";
-    font-family: interface;
-    font-size: 12px;
-    font-style: italic;
-  }
-
   .form-input-error {
     color: #d62e2e !important;
   }
@@ -79,6 +82,15 @@ body.sign_up-2445 {
    color: white; 
   }
 
+  div[data-cy="thank-you-text"] {
+    color: white;
+  }
+  
+  // no check mark 
+  i.thanks-icon {
+    display: none;
+
+  }
   button[type="submit"] {
     color: black !important;
     background-color: white;
