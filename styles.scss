@@ -18,6 +18,115 @@ iframe[src*=youtube] {
   }
 }
 
+@mixin transparent-widget-background {
+  div#grassroots-app > div.app > div.page > div.widget-row > div.page-col > div.widget-wrapper.widget-wrapper-1 > div.widget > div.widget {
+    background-color: transparent !important;
+  }
+  div.widget > div.widget {
+    background-color: transparent !important;
+  }
+}
+
+
+$dark-gray: #333;
+$white: #fff;
+
+// make header not ugly 
+.navbar-collapse {
+  ul.dropdown-menu {
+    background-color: white;
+    border-radius: 4px; 
+    a.internal-link {
+      background-color: $white !important;
+      &:hover {
+        background-color: $white !important;
+        color: $dark-gray !important;
+      }
+    }
+  }
+  ul.nav-wrapper {
+    li.nav-dropdown a:hover {
+      color: $white;
+    }
+    li.nav-dropdown a, a.internal-link:not(:hover) {
+      color: $dark-gray;
+    }
+    li.nav-dropdown a[data-cy="user-nav-button"]:not(:hover) {
+      color: $dark-gray !important;
+    }
+  }
+  .nav-link-wrapper ul.nav-wrapper {
+    a {
+      &:hover, &:focus {
+        color: white !important;
+      }
+      color: $dark-gray !important;
+    }
+    li.nav-dropdown {
+      a.dropdown-toggle:hover, a.dropdown-toggle:focus {
+        color: white !important;
+      }
+      ul.dropdown-menu {
+        background-color: white;
+        border-radius: 4px; 
+        a.internal-link {
+          background-color: transparent;
+          &:hover {
+            background-color: $white !important;
+          }
+        }
+      }
+    }
+  } 
+  .nav-link-wrapper ul.nav-wrapper a[data-cy="login"] {
+    color: white !important;
+  }
+} 
+
+span.icon-bar {
+  color: $dark-gray !important;
+  background-color: $dark-gray !important;
+}
+
+// remove ugly borders everywhere! 
+@mixin better-borders {
+  border: none !important;
+  box-shadow: rgba(64, 64, 64, 0.6) 0px 0.75rem 1.25rem 1px !important;
+}
+
+
+div#grassroots-app div.page {
+  // single campaign page! 
+  div.page-col div.widget-wrapper div.campaign-wrapper {
+    div.campaign-description a {
+      color: #15c;
+      &:hover {
+        color: #15c;
+      }
+    }
+    div.campaign-description-col div.campaign-description-col {
+      
+      @include better-borders;
+
+      div.progress-bar-wrapper div.progress-bar-negative {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        border-right: 1px solid rgb(214, 46, 46);
+        border-top: 1px solid rgb(214, 46, 46);
+        border-bottom: 1px solid rgb(214, 46, 46);
+      }
+    } 
+    div.column-widget div.column-widget {
+      @include better-borders;
+    }
+  }
+  // main page!
+  div.campaign-list div.campaign-inline a div.campaign-inline {
+    @include better-borders;
+  }
+}
 
 /* start KCEN site embeds */
 
@@ -30,6 +139,8 @@ div.widget.sc-jDwBTQ.ckfRgp,
 div.widget.sc-ckVGcZ.jfGWiW,
 body.sign_up-2415, 
 body.sign_up-2445 {
+  @include transparent-widget-background;
+  
   background-color: transparent;
   /* hide facebook */
   .registration-form > div.row {
@@ -74,6 +185,12 @@ body.sign_up-2415 {
 
 //sign_up-2445 is the just email signup form 
 body.sign_up-2445 {
+  overflow: hidden; 
+
+  div#grassroots-app div.app div.page div.widget-row div.page-col div.widget-wrapper div.widget > div.widget {
+    padding-left: 12px !important;
+  }
+  
   .form-input-error {
    color: white !important;
   }
